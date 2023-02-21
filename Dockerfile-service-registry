@@ -1,0 +1,14 @@
+# syntax=docker/dockerfile:1
+#Which "official Java image" ?
+FROM openjdk:20-ea-17-jdk-oracle
+#working directory
+WORKDIR /app
+#copy from your Host(PC, laptop) to container
+COPY service-registry/.mvn/ .mvn
+COPY service-registry/mvnw service-registry/pom.xml ./
+#Run this inside the image
+#RUN ./mvnw dependency:go-offline
+COPY service-registry/src ./src
+#run inside container
+CMD ["./mvnw", "clean"]
+CMD ["./mvnw", "spring-boot:run"]
