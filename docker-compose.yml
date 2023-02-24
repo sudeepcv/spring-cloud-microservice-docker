@@ -134,24 +134,24 @@ services:
     expose:
       - 3001
 
-  firefox:
-    image: lscr.io/linuxserver/firefox:latest
-    container_name: firefox
-    security_opt:
-      - seccomp:unconfined #optional
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+  # firefox:
+  #   image: lscr.io/linuxserver/firefox:latest
+  #   container_name: firefox
+  #   security_opt:
+  #     - seccomp:unconfined #optional
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Etc/UTC
       
-    volumes:
-      - ./config:/config
-      # - ./user.js:/config/profile/user.js
-    ports:
-      - 3000:3000
-    restart: unless-stopped
-    networks:
-     - mynetwork    
+  #   volumes:
+  #     - ./config:/config
+  #     # - ./user.js:/config/profile/user.js
+  #   ports:
+  #     - 3000:3000
+  #   restart: unless-stopped
+  #   networks:
+  #    - mynetwork    
 
 networks:
   mynetwork:

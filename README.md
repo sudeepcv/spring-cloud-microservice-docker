@@ -1,8 +1,7 @@
 
 # spring cloud microservice 
 
-using theese enviorment you could walk through the code git pod is better than codespace .
-to open the ui open the remote browser which is running on the port: 3000 once the browser is open type ui:3001 it will open the ui
+using theese enviorment you could walk through the code git pod is better than codespace . traffic from ui to the api server not allowed in this eviorment you have to make them public and updated in the ui service in order to get the ui part up and running.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](http://gitpod.io/#https://github.com/sudeepcv/spring-cloud-microservice-docker)
 
@@ -28,13 +27,9 @@ Euraka server:
 
 http://localhost:8761/
 
-open remote browser 
+React ui:
+
 http://localhost:3000/
-
-inside remote firefox browser React ui:
-http://ui:3001/
-
-
 
 Zipkin server:
 
