@@ -27,9 +27,13 @@ Euraka server:
 
 http://localhost:8761/
 
-React ui:
-
+open remote browser 
 http://localhost:3000/
+
+inside remote firefox browser React ui:
+http://ui:3001/
+
+
 
 Zipkin server:
 

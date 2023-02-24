@@ -1,4 +1,4 @@
-version: '3.8'
+version: '2.1'
 
 services:
   rabbitmq:
@@ -73,6 +73,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-api-gateway
+    container_name: api
     networks:
       - mynetwork
     restart: on-failure
@@ -122,13 +123,35 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-react-frontend
+    container_name: ui
     networks:
-      - mynetwork
+      mynetwork:
+        # aliases:
+        #   - ui
     restart: on-failure
     ports:
-      - 3000:3000
+      - "3001:3001"
     expose:
-      - 3000
+      - 3001
+
+  firefox:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: firefox
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      
+    volumes:
+      - ./config:/config
+      # - ./user.js:/config/profile/user.js
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+     - mynetwork    
 
 networks:
   mynetwork:
