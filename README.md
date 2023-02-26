@@ -1,7 +1,7 @@
 
 # spring cloud microservice 
 
-using theese enviorment you could walk through the code git pod is better than codespace . traffic from ui to the api server not allowed in this eviorment you have to make them public and updated in the ui service in order to get the ui part up and running.
+using these environments  you could walk through the code git pod is better than codespace . traffic from ui to the api server not allowed in this eviorment you have to make them public and updated in the ui service in order to get the ui part up and running.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](http://gitpod.io/#https://github.com/sudeepcv/spring-cloud-microservice-docker)
 
